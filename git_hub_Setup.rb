@@ -7,7 +7,7 @@ rails new \
   NAME_OF_APP
 
 cd NAME_OF_APP
-gh repo create--public --source=. #This creates the repo on GH
+gh repo create --public --source=. #This creates the repo on GH
 
 # --------From forked repo--------
 mkdir ~/code/OWNER_GITHUB_USERNAME
