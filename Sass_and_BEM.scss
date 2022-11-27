@@ -1,0 +1,54 @@
+// --------Variables--------------------------------
+$primaryBtn: rgb(187, 50, 50);  // Can use this variable throughout now
+
+// --------Nesting---------------------------------
+header {
+  background: blue;
+
+  button {
+    background: red;  // This is targetting a button nested in a header, same as 'header button'
+  }
+
+
+}
+
+// ------Mixins------------------------------
+@mixin AnyNameYouWant($variable) {   //This is creating a variable (mixin) with a name, then you can call it anywhere in CSS
+  display: flex;
+  justify-content: center;
+  flex-direction: $variable; //Allows you to pass a paramater when you call the function
+}
+
+.header {
+  @include AnyNameYouWant(column);  //Calling it here and passing column as an argument
+
+  &__img { //This is appending "__img" onto ".header" so you don't have to write again
+    height: 100vh;
+  }
+}
+
+// ------------Extend and calcs-------------
+footer {
+  @extend header; //This will just extend the styling from the header into this section
+  width: 320px * 3.65 //Can do calculations!
+}
+
+// ===================BEM (Block Element Modifier)===============
+// Block is a card: class="card"
+// Element is a photo, p, div: class="card__picture" - "__" designates that it is a child
+// Modifier is changing something additional on a block or an element: class="card__button card__button--active" --> "--active" is the modifier
+
+.card {
+  padding: 8px;
+
+  &__img {
+    display: block; //Modifying the element "card__img"
+
+    &--active {
+      color: yellow; //Targetting the modifier "card__img--active"
+    }
+  }
+}
+
+// -------------CBEM (Container)-----------------
+// One container per web page
