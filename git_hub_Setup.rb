@@ -7,7 +7,18 @@ rails new \
   NAME_OF_APP
 
 cd NAME_OF_APP
-gh repo create --public --source=. #This creates the repo on GH
+
+# Initalize tracking before creating a repo OR error current directory is not a git repository
+git init
+# First add and commit
+git add .
+git commit -m "Great message"
+
+# Create repo on github
+gh repo create name-of-repo --public --source=. #This creates the repo on GH with indicated name
+
+# push to new repo
+git push origin master
 
 # --------From forked repo--------
 mkdir ~/code/OWNER_GITHUB_USERNAME
@@ -15,9 +26,4 @@ cd ~/code/OWNER_GITHUB_USERNAME
 git clone git@github.com:OWNER_GITHUB_USERNAME/PROJECT_NAME.git #Clone using SSH
 cd PROJECT_NAME
 
-#Initialize tracking
-git init
-# First add and commit
-git add .
-git commit -m "Great message"
-# Push to GitHub
+
