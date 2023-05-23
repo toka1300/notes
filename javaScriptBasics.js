@@ -44,6 +44,19 @@ const oneParam = name => `Hello ${name}` //No parenthesis on params needed if on
 // 4) JS is not a good OOP, so don't have to worry about classes and issues related to scope and arrow functions
 // 5) Only place you would see issues is in event listeners and using 'this'. THIS can be averted by using event.target instead.
 
+// ==============Object Constructing==================
+const guatData = {
+  population: 17.1,
+  bestFood: 'garnaches',
+}
+
 // ==============Object Destructing==================
-const { textContent: href } = block.firstElementChild; // This will get the 'textContent' property of the first Element and assign it to a const called 'href'
+const { guatPopulation: population, guatFood: bestFood } = guatData
+// On the left side of the equation, you are creating the new constants, these new constants are 'guatPopulation' and 'food', on the other side
+// of the colon, you are specifying from which keys you want to extract this info
+// ^Is the equivalent of doing this:
+const guatPopulation = guatData.population
+const guatFood = guatData.bestFood
+// Or if you want to just name it the same thing as the property:
+const { population } = guatData
 

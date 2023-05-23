@@ -1,2 +1,15 @@
 /* Revert styling given to text by it's parent a Tag */
 /* --> Target the a tag itself, not the <p> or <span> */
+
+/* =============Media queries============= */
+@media (max-width: 900px) { /* This will apply UP TO 900px only I.e: 900px and below */
+  h1 {
+    font-size: 16px;
+  }
+}
+
+/* -------------Transition----------------- */
+/* Specify two things 1) The property you want to transition 2) duration of transition */
+div {
+  transition: height 0.4s, position 0.7s;
+}
