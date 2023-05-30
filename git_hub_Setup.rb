@@ -21,3 +21,6 @@ git init
 git add .
 git commit -m "Great message"
 # Push to GitHub
+
+# Reset the remote branch of your local branch
+git branch -u upstream/foo
