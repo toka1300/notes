@@ -1,0 +1,2 @@
+JSON.parse(response) //It the response comes back as a string which is a in JSON format, we want it as a JS object, this will do it
+JSON.stringify(data) //Does the opposite, if you need to send info to API

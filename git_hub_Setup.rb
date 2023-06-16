@@ -24,3 +24,16 @@ git commit -m "Great message"
 
 # Reset the remote branch of your local branch
 git branch -u upstream/foo
+
+# ------------------Git rules of thumb------------------
+# Sync to parent branch more frequently
+# Do smaller commits more frequently
+# Instead of git reset, always consider branch off from the old commit and check integrity
+# If git reset is a must(why?), make local copy before changing the commit history using push --force
+
+# Stick to these commands 99% of the time:
+# 1) Commit
+# 2) Push
+# 3) Branch out
+# 4) Delete branches
+# 5) Merge branches

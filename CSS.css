@@ -13,3 +13,16 @@
 div {
   transition: height 0.4s, position 0.7s;
 }
+
+/* --------------Fluid Typography============*/
+/* Only use px for button sizes (depends), header height, borders, padding */
+/* Use vh vw for large elements (wrapper, nav bar) */
+/* rem can be used for almost everything, makes more sense to use em for vertical margin, as you want it to be proportional to size of text */
+/* ems are good for things that need to be proportional to it's parent (logo on button) */
+
+/* em is relative to the element's font size, 1.5 em is 1.5X the size of the font
+rem is relative to the root node (html element) font size (16px)
+When we use px for font-size, people with vision issues cannot scale the page with zoom, essentially changes value of the rem */
+
+/* Standard way was clamp(min, ideal, max) */
+/* 1vw is 1% of the viewport width, while 1cqi = 1% of container's inline size */
