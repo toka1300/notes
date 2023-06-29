@@ -15,10 +15,11 @@ names.sort((a, b) => a > b ? 1 : -1)
 // ---------Reduce--------
 // Will loop through and accumulate values
 
+const initialValue = 0;
 const friends = [{ name: casey, name:Fabian }, {age: 32, name: casey, age: 31}, {name: casey, age: 33 }]
 friends.reduce((total, toAdd) => { //total is running total and toAdd is the next number to add
   return total + toAdd
-}, 0); //The 0 here is for the first time around as 'total' will be undefined
+}, initialValue); 
 
 // ==========Function types=============
 // 1) ----Traditional function----
@@ -59,4 +60,28 @@ const guatPopulation = guatData.population
 const guatFood = guatData.bestFood
 // Or if you want to just name it the same thing as the property:
 const { population } = guatData
+
+// =============map==================
+// Creates a new array with the results of calling a function on the  on the input array
+const familyAge = [32, 37, 35, 59, 61]
+const  familyAgein2022 = familyAge.map(age => age + 77);
+// This is a good sub for when you are creating a new array and then for each to populate, done in one go! E.g:
+const gridProps = newChildren.map((child) => {
+  const picture = child.querySelector('picture');
+  const title = child.querySelector('strong');
+  const ctas = child.querySelectorAll('a');
+  return { picture, title, ctas };
+});
+
+// ==============To Try===============
+array.some(); //Checks if any elements meet condition
+// Can use it as a forEach, and break out of it early when it is found, otherwise will run through all
+array.includes(); //Check if string is in, vs. some is a condition you are building
+array.every(); //Checks if all elements meet condition
+Array.from(); //Called a static method, called on the moma method
+// Second argument is actually a map argument, so you can format it exactly like you want in one go
+
+Object.entries(); //Basically converts an object into array of those key/value pairs
+[...]; //Spread, instead of mutating original array, can make new var - splice everything before and after and use ... to combine
+// Object spread allows the same thing on objects
 
