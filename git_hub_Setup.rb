@@ -1,13 +1,13 @@
-# ========New repo=============
-cd ~/code/YOUR_GITHUB_USERNAME
+git init
+gh repo create my-newrepo --public --source=. --remote=upstream --push #This creates the repo on GH
+
+# ========New Rails minimal template repo=============
 rails new \
   -d postgresql \
   -j webpack \
   -m https://raw.githubusercontent.com/lewagon/rails-templates/master/minimal.rb \
   NAME_OF_APP
 
-cd NAME_OF_APP
-gh repo create --public --source=. #This creates the repo on GH
 
 # --------From forked repo--------
 mkdir ~/code/OWNER_GITHUB_USERNAME
@@ -22,8 +22,10 @@ git add .
 git commit -m "Great message"
 # Push to GitHub
 
-# Reset the remote branch of your local branch
-git branch -u upstream/foo
+# --------Renaming branch---------
+git branch -m new-name # Rename local branch
+git push origin :old-name new-name # Delete the old-name remote branch and push the new-name local branch
+git push origin -u new-name # Reset the upstream branch for the new-name local branch
 
 # ------------------Git rules of thumb------------------
 # Sync to parent branch more frequently

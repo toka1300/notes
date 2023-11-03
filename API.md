@@ -29,8 +29,8 @@ You can take the response from one API call and then feed it into the next using
 ```
 const test = async () => {
   try {
-  resp = await fetch("https://dog.ceo/api/breeds/image/random")
-  json = await resp.json();
+  const resp = await fetch("https://dog.ceo/api/breeds/image/random")
+  const json = await resp.json();
   } catch (e) {
     console.log('Error:', e);
   }

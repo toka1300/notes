@@ -26,3 +26,16 @@ When we use px for font-size, people with vision issues cannot scale the page wi
 
 /* Standard way was clamp(min, ideal, max) */
 /* 1vw is 1% of the viewport width, while 1cqi = 1% of container's inline size */
+
+/* ----------Container queries-------- */
+/* First create your container you would like to query */
+main .feature-grid-desktop .grid-item {
+  container-type: inline-size;
+}
+
+/* Then set your different size queries, it will look up for nearest container with query on it */
+@container (inline-size < 280px) {
+  main .feature-grid-desktop .grid-item h2 {
+    font-size: var(--heading-font-size-m);
+  }
+}
